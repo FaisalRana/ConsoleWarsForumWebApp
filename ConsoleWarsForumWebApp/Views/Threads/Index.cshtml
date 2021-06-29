@@ -1,0 +1,17 @@
+<h1><b>All Threads:</b></h1>
+
+<ol>
+@foreach (Thread thread in Model)
+{
+  <h1>@thread.Title</h1>
+  <p>@thread.Body</p>
+  <p>ID: @thread.ThreadId</p>
+  <hr>
+  <hr>
+  <hr>
+}
+
+    @* <a href="/Threads/Details/@(thread.ThreadId)"><p>View Details</p></a> *@
+    <br>
+</ol>
+

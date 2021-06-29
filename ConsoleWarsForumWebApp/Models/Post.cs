@@ -1,0 +1,13 @@
+using System;
+
+namespace ConsoleWarsForumWebApp.Models
+{
+  public class Post
+  {
+    public int PostId { get; set; }
+    public int ThreadId { get; set; }
+    public string Text { get; set; }
+    public DateTime DateAndTimeStamp { get; set; }
+    public string Username { get; set; }
+  }
+}
