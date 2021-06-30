@@ -1,0 +1,12 @@
+@using ConsoleWarsForumWebApp.Models
+<h1>@Model.Title</h1>
+<hr>
+<h3>@Model.Body</h3>
+<span class="subscript"><p>@Model.DateAndTimeStamp</p></span>
+<hr>
+<ul>
+@foreach(Post post in ViewBag.threadPosts)
+{
+  <li>@post.Text<br><span class="subscript">@post.Username</span><br><span class="subscript">@post.DateAndTimeStamp</span></li>
+}
+</ul>

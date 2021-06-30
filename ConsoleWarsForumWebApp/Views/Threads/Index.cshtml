@@ -3,9 +3,8 @@
 <ol>
 @foreach (Thread thread in Model)
 {
-  <h1>@thread.Title</h1>
+  <h1>@Html.ActionLink(thread.Title,"Details", new {id = thread.ThreadId})</h1>
   <p>@thread.Body</p>
-  <p>ID: @thread.ThreadId</p>
   <hr>
   <hr>
   <hr>

@@ -15,13 +15,34 @@ namespace ConsoleWarsForumWebApp.Models
 
     public static List<Thread> GetThreads()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = ApiHelper.GetAllThreads();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Thread> threadList = JsonConvert.DeserializeObject<List<Thread>>(jsonResponse.ToString());
 
       return threadList;
+    }
+    public static Thread GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.GetThread(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Thread thread = JsonConvert.DeserializeObject<Thread>(jsonResponse.ToString());
+
+      return thread;
+    }
+
+    public static List<Post> GetThreadPosts(int id)
+    {
+      var apiCallTask = ApiHelper.GetThreadPosts(id);
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Post> postList = JsonConvert.DeserializeObject<List<Post>>(jsonResponse.ToString());
+
+      return postList;
     }
   }
 }

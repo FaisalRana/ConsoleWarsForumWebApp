@@ -14,6 +14,12 @@ namespace ConsoleWarsForumWebApp.Models
       return View(allThreads);
     }
 
+    public ActionResult Details(int id)
+    {
+      Thread thisThread = Thread.GetDetails(id);
+      ViewBag.threadPosts = Thread.GetThreadPosts(id);
+      return View(thisThread);
+    }
     // [HttpPost]
     // public async Task<ActionResult<Thread> Post(Thread thread)
     // {
